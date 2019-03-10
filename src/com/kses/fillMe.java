@@ -54,15 +54,18 @@ class fillMe
 				robot.keyPress(code);
 				robot.keyRelease(code);
 
-				robot.delay(40);			
+				robot.delay(50);			
 			}
 
+//			robot.delay(500);
 			robot.keyPress('\t');
+			robot.delay(1);
 			robot.keyRelease('\t');
-			robot.delay(200);
+			robot.delay(100);
 			robot.keyPress('\t');
+			robot.delay(1);
 			robot.keyRelease('\t');
-			robot.delay(40);
+			robot.delay(100);
 		}
 	}
 	
@@ -70,7 +73,10 @@ class fillMe
 	{
 
 		if(args.length < 1)
+			{
+			System.out.println("We need some input file");
 			return;
+			}
 
 		try
 		{
@@ -79,22 +85,17 @@ class fillMe
 
 			System.out.println("Click on the website so I can fill it");
 			robot.delay(5000);
-			
+			System.out.println("And here we go!");
 			for(String line : list)
 			{
 				typeNumber(robot, line);
 			}
-			
-			
-			
-			
-
 		}
 		catch(Exception e)
 		{
 			System.out.println("Bad Robot " + e);
 			return;
 		}
-
+		System.out.println("DONE");
 	}
 }
